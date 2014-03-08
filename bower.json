@@ -1,0 +1,11 @@
+{
+  "name": "uutil",
+  "version": "0.0.2",
+  "description": "micro library with various utility functions",
+  "authors": "Rasmus Erik Voel Jensen (solsort.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rasmuserik/uutil.git"
+  },
+  "main": "uutil.js"
+}

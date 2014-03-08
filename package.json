@@ -1,23 +1,24 @@
 {
-    "name": "uutil",
-    "version": "0.0.1",
-    "title": "µutil",
-    "description": "micro library with various utility functions",
-    "npmjs": true,
-    "webjs": true,
-    "fullname": "µutil",
-    "author": "Rasmus Erik Voel Jensen (solsort.com)",
-    "owner": "rasmuserik",
-    "main": "uutil.js",
-    "scripts": {
-        "start": "node ./node_modules/solapp/solapp.js start",
-        "test": "node ./node_modules/solapp/solapp.js test"
-    },
-    "dependencies": {
-        "platformenv": "*"
-    },
-    "repository": {
-        "type": "git",
-        "url": "http://github.com/rasmuserik/uutil.git"
-    }
+  "name": "uutil",
+  "version": "0.0.2",
+  "title": "µutil",
+  "description": "micro library with various utility functions",
+  "npmjs": true,
+  "webjs": true,
+  "fullname": "µutil",
+  "author": "Rasmus Erik Voel Jensen (solsort.com)",
+  "owner": "rasmuserik",
+  "main": "uutil.js",
+  "scripts": {
+    "start": "node ./node_modules/solapp/solapp.js start",
+    "test": "node ./node_modules/solapp/solapp.js test"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rasmuserik/uutil.git"
+  },
+  "authors": [
+    "Rasmus Erik Voel Jensen (solsort.com)"
+  ]
 }
