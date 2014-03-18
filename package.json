@@ -1,6 +1,6 @@
 {
   "name": "uutil",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "title": "µutil",
   "description": "micro library with various utility functions",
   "npmjs": true,
