@@ -1,4 +1,4 @@
-# µutil 0.0.3
+# µutil 0.0.4
 
 micro library with various utility functions
 [![ci](https://secure.travis-ci.org/rasmuserik/uutil.png)](http://travis-ci.org/rasmuserik/uutil)
@@ -71,6 +71,22 @@ define module
 
 # String
 
+    uu.urlString = (str) -> #{{{2
+      mapping =
+        "å": "aa"
+        "Å": "Aa"
+        "ø": "o"
+        "Ø": "O"
+        "æ": "ae"
+        "Æ": "AE"
+        ",": " "
+        ".": " "
+    
+      str
+        .trim()
+        .toLocaleLowerCase()
+        .replace(/[^a-zA-Z0-9]/g, (c) -> mapping[c] || " ")
+        .replace(/\ +/g, "-")
     uu.strHash = (s) -> #{{{2 hashing based on djb
       hash = 5381
       i = s.length

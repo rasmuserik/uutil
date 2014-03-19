@@ -109,6 +109,23 @@
     return (1664525 * n + 1013904223) | 0;
   };
 
+  uu.urlString = function(str) {
+    var mapping;
+    mapping = {
+      "å": "aa",
+      "Å": "Aa",
+      "ø": "o",
+      "Ø": "O",
+      "æ": "ae",
+      "Æ": "AE",
+      ",": " ",
+      ".": " "
+    };
+    return str.trim().toLocaleLowerCase().replace(/[^a-zA-Z0-9]/g, function(c) {
+      return mapping[c] || " ";
+    }).replace(/\ +/g, "-");
+  };
+
   uu.strHash = function(s) {
     var hash, i;
     hash = 5381;
