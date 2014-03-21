@@ -23,7 +23,7 @@ uu.domListen = (elem, events, fn) -> #{{{3
       elem.attachEvent "on#{event}", fn
 uu.onComplete = (fn) -> #{{{2
   if isWindow
-    if document.readystate == "complete"
+    if document.readyState == "complete"
       fn()
     else
       setTimeout (-> uu.onComplete fn), 17

@@ -66,7 +66,7 @@
 
   uu.onComplete = function(fn) {
     if (isWindow) {
-      if (document.readystate === "complete") {
+      if (document.readyState === "complete") {
         return fn();
       } else {
         return setTimeout((function() {

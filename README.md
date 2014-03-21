@@ -1,4 +1,4 @@
-# µutil 0.0.9
+# µutil 0.0.10
 
 micro library with various utility functions
 [![ci](https://secure.travis-ci.org/rasmuserik/uutil.png)](http://travis-ci.org/rasmuserik/uutil)
@@ -38,7 +38,7 @@ define module
           elem.attachEvent "on#{event}", fn
     uu.onComplete = (fn) -> #{{{2
       if isWindow
-        if document.readystate == "complete"
+        if document.readyState == "complete"
           fn()
         else
           setTimeout (-> uu.onComplete fn), 17
