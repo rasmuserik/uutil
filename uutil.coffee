@@ -77,7 +77,7 @@ uu.obj2style = (obj) -> #{{{2
     csskey = key.replace /[A-Z]/g, (c) -> "-" + c.toLowerCase()
     val = "#{val}px" if typeof val == "number"
     if val && typeof val == "object" && val.constructor == Object
-      "#{key}{#{uu.obj2style val}"
+      "#{key}{#{uu.obj2style val}}"
     else
       "#{csskey}:#{val};"
   ).join ""
