@@ -1,4 +1,4 @@
-# µutil 0.0.6
+# µutil 0.0.7
 
 micro library with various utility functions
 [![ci](https://secure.travis-ci.org/rasmuserik/uutil.png)](http://travis-ci.org/rasmuserik/uutil)
@@ -102,7 +102,7 @@ define module
         csskey = key.replace /[A-Z]/g, (c) -> "-" + c.toLowerCase()
         val = "#{val}px" if typeof val == "number"
         if val && typeof val == "object" && val.constructor == Object
-          "#{key}{#{obj2style val}"
+          "#{key}{#{uu.obj2style val}"
         else
           "#{csskey}:#{val};"
       ).join ""

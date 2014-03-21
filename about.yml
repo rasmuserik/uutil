@@ -1,6 +1,6 @@
 name: uutil
 title: µutil
-version: 0.0.6
+version: 0.0.7
 desc: micro library with various utility functions
 package:
   main: uutil.js  

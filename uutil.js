@@ -156,7 +156,7 @@
           val = "" + val + "px";
         }
         if (val && typeof val === "object" && val.constructor === Object) {
-          _results.push("" + key + "{" + (obj2style(val)));
+          _results.push("" + key + "{" + (uu.obj2style(val)));
         } else {
           _results.push("" + csskey + ":" + val + ";");
         }
