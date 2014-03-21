@@ -16,7 +16,7 @@ Object.keys ?= (obj) -> (key for key, _ of obj)
 #{{{1 DOM
 uu.domListen = (elem, events, fn) -> #{{{3
   return if !elem
-  for event in event.split " "
+  for event in events.split " "
     if elem.addEventListener
       elem.addEventListener event, fn, false
     else
