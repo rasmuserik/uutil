@@ -46,12 +46,22 @@
     };
   }
 
-  uu.domListen = function(elem, event, fn) {
-    if (elem.addEventListener) {
-      return elem.addEventListener(event, fn, false);
-    } else {
-      return elem.attachEvent("on" + event, fn);
+  uu.domListen = function(elem, events, fn) {
+    var event, _i, _len, _ref, _results;
+    if (!elem) {
+      return;
     }
+    _ref = event.split(" ");
+    _results = [];
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      event = _ref[_i];
+      if (elem.addEventListener) {
+        _results.push(elem.addEventListener(event, fn, false));
+      } else {
+        _results.push(elem.attachEvent("on" + event, fn));
+      }
+    }
+    return _results;
   };
 
   uu.onComplete = function(fn) {

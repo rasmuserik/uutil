@@ -1,4 +1,4 @@
-# µutil 0.0.8
+# µutil 0.0.9
 
 micro library with various utility functions
 [![ci](https://secure.travis-ci.org/rasmuserik/uutil.png)](http://travis-ci.org/rasmuserik/uutil)
@@ -29,11 +29,13 @@ define module
 
 # DOM
 
-    uu.domListen = (elem, event, fn) -> #{{{3
-      if elem.addEventListener
-        elem.addEventListener event, fn, false
-      else
-        elem.attachEvent "on#{event}", fn
+    uu.domListen = (elem, events, fn) -> #{{{3
+      return if !elem
+      for event in event.split " "
+        if elem.addEventListener
+          elem.addEventListener event, fn, false
+        else
+          elem.attachEvent "on#{event}", fn
     uu.onComplete = (fn) -> #{{{2
       if isWindow
         if document.readystate == "complete"

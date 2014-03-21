@@ -14,11 +14,13 @@ window.uutil = window.uu = uu if isWindow
 #{{{1 Shim
 Object.keys ?= (obj) -> (key for key, _ of obj)
 #{{{1 DOM
-uu.domListen = (elem, event, fn) -> #{{{3
-  if elem.addEventListener
-    elem.addEventListener event, fn, false
-  else
-    elem.attachEvent "on#{event}", fn
+uu.domListen = (elem, events, fn) -> #{{{3
+  return if !elem
+  for event in event.split " "
+    if elem.addEventListener
+      elem.addEventListener event, fn, false
+    else
+      elem.attachEvent "on#{event}", fn
 uu.onComplete = (fn) -> #{{{2
   if isWindow
     if document.readystate == "complete"
