@@ -10,7 +10,7 @@ use = if isNodeJs then ((module) -> require module) else ((module) -> window[mod
 
 # define module
 uu = if isNodeJs then exports else {}
-window.uu = uu if isWindow
+window.uutil = window.uu = uu if isWindow
 #{{{1 Shim
 Object.keys ?= (obj) -> (key for key, _ of obj)
 #{{{1 DOM

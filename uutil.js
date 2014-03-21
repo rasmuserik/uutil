@@ -31,7 +31,7 @@
   uu = isNodeJs ? exports : {};
 
   if (isWindow) {
-    window.uu = uu;
+    window.uutil = window.uu = uu;
   }
 
   if (Object.keys == null) {

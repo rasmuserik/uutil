@@ -1,4 +1,4 @@
-# µutil 0.0.4
+# µutil 0.0.5
 
 micro library with various utility functions
 [![ci](https://secure.travis-ci.org/rasmuserik/uutil.png)](http://travis-ci.org/rasmuserik/uutil)
@@ -21,7 +21,7 @@ use - require/window.global with non-require name to avoid being processed in fi
 define module
 
     uu = if isNodeJs then exports else {}
-    window.uu = uu if isWindow
+    window.uutil = window.uu = uu if isWindow
 
 # Shim
 
