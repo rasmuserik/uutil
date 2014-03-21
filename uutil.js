@@ -51,7 +51,7 @@
     if (!elem) {
       return;
     }
-    _ref = event.split(" ");
+    _ref = events.split(" ");
     _results = [];
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       event = _ref[_i];
