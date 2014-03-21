@@ -74,10 +74,13 @@ uu.strHash = (s) -> #{{{2 hashing based on djb
 uu.xmlEscape = (str) -> String(str).replace RegExp("[\x00-\x1f\x80-\uffff&<>\"']", "g"), (c) -> "&##{c.charCodeAt 0};" #{{{2
 uu.obj2style = (obj) -> #{{{2
   (for key, val of obj
-    key = key.replace /[A-Z]/g, (c) -> "-" + c.toLowerCase()
+    csskey = key.replace /[A-Z]/g, (c) -> "-" + c.toLowerCase()
     val = "#{val}px" if typeof val == "number"
-    "#{key}:#{val}"
-  ).join ";"
+    if val && typeof val == "object" && val.constructor == Object
+      "#{key}{#{obj2style val}"
+    else
+      "#{csskey}:#{val};"
+  ).join ""
 
 uu.jsonml2html = (arr) -> #{{{2
   return "#{uu.xmlEscape arr}" if !Array.isArray(arr)

@@ -143,22 +143,26 @@
   };
 
   uu.obj2style = function(obj) {
-    var key, val;
+    var csskey, key, val;
     return ((function() {
       var _results;
       _results = [];
       for (key in obj) {
         val = obj[key];
-        key = key.replace(/[A-Z]/g, function(c) {
+        csskey = key.replace(/[A-Z]/g, function(c) {
           return "-" + c.toLowerCase();
         });
         if (typeof val === "number") {
           val = "" + val + "px";
         }
-        _results.push("" + key + ":" + val);
+        if (val && typeof val === "object" && val.constructor === Object) {
+          _results.push("" + key + "{" + (obj2style(val)));
+        } else {
+          _results.push("" + csskey + ":" + val + ";");
+        }
       }
       return _results;
-    })()).join(";");
+    })()).join("");
   };
 
   uu.jsonml2html = function(arr) {
