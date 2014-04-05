@@ -1,4 +1,4 @@
-# µutil 0.0.10
+# µutil 0.0.11
 
 micro library with various utility functions
 [![ci](https://secure.travis-ci.org/rasmuserik/uutil.png)](http://travis-ci.org/rasmuserik/uutil)
@@ -31,7 +31,7 @@ define module
 
     uu.domListen = (elem, events, fn) -> #{{{3
       return if !elem
-      for event in event.split " "
+      for event in events.split " "
         if elem.addEventListener
           elem.addEventListener event, fn, false
         else
