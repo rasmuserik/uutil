@@ -204,7 +204,10 @@ if isWindow then do ->
 do ->
   logData = []
   logId = Math.random()
-  logUrl = "//ssl.solsort.com/api/log"
+  if isWindow && window.location?.protocol == "http:"
+    logUrl = "http://ssl.solsort.com/api/log"
+  else
+    logUrl = "https://ssl.solsort.com/api/log"
   logSyncing = false
   logsBeforeSync = 200
   syncDelay = 400

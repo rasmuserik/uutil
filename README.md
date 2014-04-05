@@ -1,4 +1,4 @@
-# µutil 0.0.11
+# µutil 0.0.12
 
 micro library with various utility functions
 [![ci](https://secure.travis-ci.org/rasmuserik/uutil.png)](http://travis-ci.org/rasmuserik/uutil)
@@ -253,7 +253,10 @@ so there we just send update every `syncDelay` milliseconds.
     do ->
       logData = []
       logId = Math.random()
-      logUrl = "//ssl.solsort.com/api/log"
+      if isWindow && window.location?.protocol == "http:"
+        logUrl = "http://ssl.solsort.com/api/log"
+      else
+        logUrl = "https://ssl.solsort.com/api/log"
       logSyncing = false
       logsBeforeSync = 200
       syncDelay = 400
